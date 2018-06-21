@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class socialjInfo implements Serializable{
+@Table(name="socialjinfo")
+public class socialjinfo implements Serializable{
 //model for socialj app info	
 	@Id
+	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
@@ -21,9 +24,9 @@ public class socialjInfo implements Serializable{
 	@Column
 	private String description;
 	
-	public socialjInfo() {}
+	public socialjinfo() {}
 	
-	public socialjInfo(String title, String description) {
+	public socialjinfo(String title, String description) {
 		super();
 		this.title=title;
 		this.description=description;
