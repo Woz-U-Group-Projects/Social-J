@@ -32,19 +32,19 @@ public class socialjinfo implements Serializable{
 		this.description=description;
 	}
 	
-	public void setTitle() {
+	public void setTitle(String title) {
 		this.title=title;
 	}
 	
-	public String getTitle(String title) {
+	public String getTitle() {
 		return title;
 	}
 	
-	public void setDescription() {
+	public void setDescription(String description) {
 		this.description=description;
 	}
 	
-	public String getDescription(String description) {
+	public String getDescription() {
 		return description;
 	}
 }
