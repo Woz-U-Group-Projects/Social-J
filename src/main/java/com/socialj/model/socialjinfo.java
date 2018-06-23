@@ -9,10 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name="socialjinfo")
 @Table(name="socialjinfo")
 public class socialjinfo implements Serializable{
-//model for socialj app info	
+
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//model for socialj app info	
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -32,19 +38,19 @@ public class socialjinfo implements Serializable{
 		this.description=description;
 	}
 	
-	public void setTitle() {
+	public void setTitle(String title) {
 		this.title=title;
 	}
 	
-	public String getTitle(String title) {
+	public String getTitle() {
 		return title;
 	}
 	
-	public void setDescription() {
+	public void setDescription(String description) {
 		this.description=description;
 	}
 	
-	public String getDescription(String description) {
+	public String getDescription() {
 		return description;
 	}
 }
