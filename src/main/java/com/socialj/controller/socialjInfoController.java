@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.socialj.repository.socialjinfoRespository;
+import com.socialj.repository.socialjInfoRespository;
 import com.socialj.exception.ResourceNotFoundException;
 import com.socialj.model.socialjinfo;
 
@@ -20,7 +20,7 @@ import com.socialj.model.socialjinfo;
 public class socialjInfoController {
 	
 	@Autowired
-	private socialjinfoRespository sjrep;
+	private socialjInfoRespository sjrep;
 	
 	@GetMapping("/title/{id}")
 	public socialjinfo getTitleDescByID(@PathVariable(value="id") Integer id) {
