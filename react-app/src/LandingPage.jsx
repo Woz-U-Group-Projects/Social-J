@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './LandingPage.css';
+import axios from 'axios';
+
+
+const url = '';
 
 class LandingPage extends Component {
+    //initialize the url 
     render() {
         return (
             <div className="App">
@@ -15,6 +20,23 @@ class LandingPage extends Component {
             </div>
         );
     }
+
+    componentDidMount(){
+        //get the url using the get method from 'axios'
+        axios.fetch(url).then((res) => {
+            //do stuff to data here:
+            console.log(res)
+        }).catch((err) => {
+            //display this after the error:
+            console.log(err)
+        })
+    }
+    render(){
+        return(
+            <span> </span>
+        )
+    }
+
 }
 
 export default LandingPage;
