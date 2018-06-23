@@ -17,7 +17,7 @@ import com.socialj.model.socialjinfo;
 
 @RestController
 @RequestMapping("/api")
-public class socialjInfoController {
+public class socialjinfoController {
 	
 	@Autowired
 	private socialjinfoRespository sjrep;
