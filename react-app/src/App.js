@@ -1,21 +1,45 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SocialjList from "./SocialjList";
+import axios from "axios";
+const URL = "http://localhost:8080/api/socialjinfos";
+
 
 class App extends Component {
+
+  state = {
+    socialjinfos: []
+  };
+
+  componentDidMount() {
+    axios.get(URL)
+      .then(response => {
+        console.log(response)
+        const newList = response.data.map(c => {
+          console.log(newList)
+          return {
+            id: c.id,
+            title: c.title,
+            description: c.description
+          };
+        });
+
+        const newState = Object.assign({}, this.state, {
+          socialjinfos: newList
+        });
+
+        this.setState(newState);
+      })
+      .catch(error => console.log(error));
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src= '/logo.svg' className="App-logo" alt="logo" />
-          <h1 className="App-title">Social-J [hard-coded]</h1>
+          <SocialjList socialjinfos={this.state.socialjinfos} />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
 }
-
 export default App;
