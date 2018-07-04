@@ -5,11 +5,13 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.socialj.repository.socialjinfoRespository;
 import com.socialj.exception.ResourceNotFoundException;
@@ -17,6 +19,7 @@ import com.socialj.model.socialjinfo;
 
 @RestController
 @RequestMapping("/api")
+//@CrossOrigin(origins="http://localhost:3000")
 public class socialjinfoController {
 	
 	@Autowired
@@ -34,7 +37,7 @@ public class socialjinfoController {
 		return sjrep.save(socialjinfo);
 	}
 	
-	@GetMapping("/titles")
+	@RequestMapping(method=RequestMethod.GET, value="/socialjinfos")
 	public List<socialjinfo> getAllTitles(){
 		return sjrep.findAll();
 	}

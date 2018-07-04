@@ -1,0 +1,14 @@
+.socialjinfo {
+  background-color: #222;
+  text-align: center;
+
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.socialjinfo span {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #333;
+}

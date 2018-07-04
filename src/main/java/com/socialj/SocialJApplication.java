@@ -8,4 +8,4 @@ public class SocialJApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SocialJApplication.class, args);
 	}
-}
+}	
